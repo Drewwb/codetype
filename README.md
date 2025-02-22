@@ -1,0 +1,2 @@
+# codetype
+JS code website
