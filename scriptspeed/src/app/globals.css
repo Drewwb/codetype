@@ -5,17 +5,45 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* VS Code specific vars */
+  --vscode-background: #1e1e1e;
+  --vscode-sidebar: #252526;
+  --vscode-editor: #1e1e1e;
+  --vscode-terminal: #1e1e1e;
+  --vscode-text: #cccccc;
+  --vscode-text-muted: #858585;
+  --vscode-border: #454545;
+  --vscode-active-border: #007acc;
+  --vscode-hover: #2a2d2e;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1e1e1e;
+    --foreground: #cccccc;
+  }
+
+  body {
+    background-color: var(--vscode-background);
+    color: var(--vscode-text);
+  }
+
+  .bg-gray-900 {
+    background-color: var(--vscode-background);
+  }
+
+  .border-gray-700 {
+    border-color: var(--vscode-border);
+  }
+
+  .text-gray-300 {
+    color: var(--vscode-text);
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
 }
