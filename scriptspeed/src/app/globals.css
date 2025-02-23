@@ -47,3 +47,21 @@ body {
   background: var(--background);
   font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
 }
+
+/* General arrow styles */
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 5px solid white;
+  margin-right: 8px;
+  rotate: 45;
+  transition: transform 0.1s ease;
+}
+
+/* When the folder is open, rotate the arrow */
+.arrow.open {
+  transform: rotate(90deg);
+}

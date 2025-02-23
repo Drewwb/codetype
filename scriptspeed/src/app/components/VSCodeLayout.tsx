@@ -29,6 +29,8 @@ const VSCodeLayout = () => {
 
       {/* Main Content Area with Terminal */}
       <div className="flex flex-1 overflow-hidden">
+        {/* Left Skinny Bar */}
+        <div className="w-12 bg-gray-900 border-r border-gray-700 h-screen" />
         {/* Left Sidebar (Explorer) */}
         {isExplorerOpen && (
           <div className="w-64 border-r border-gray-700 bg-black p-2 flex flex-col">
@@ -36,55 +38,69 @@ const VSCodeLayout = () => {
             <div className="text-sm opacity-80 overflow-y-auto">
               {/* Folder Structure with Collapsible Folders */}
               <div className="pl-2">
-                <div className="flex items-center cursor-pointer" onClick={() => toggleFolder('src')}>
-                  <span>{isSrcOpen ? '▼' : '►'}</span>
+                <div className="flex items-center cursor-pointer hover:bg-gray-700 p-1" onClick={() => toggleFolder('src')}>
+                  <span className={`arrow ${isSrcOpen ? 'open' : ''}`} />
                   <div>📁 src</div>
                 </div>
                 {isSrcOpen && (
                   <div className="pl-4">
-                    <div>📄 index.js</div>
-                    <div>📄 styles.css</div>
+                    <div className="cursor-pointer hover:bg-gray-700 w-full block">
+                      <div className="cursor-pointer hover:bg-gray-700 p-1 w-full block" onClick={() => alert('Clicked index.js')}>📄 index.js</div>
+                    </div>
+                    <div className="cursor-pointer hover:bg-gray-700">
+                      <div className="cursor-pointer hover:bg-gray-700 p-1" onClick={() => alert('Clicked styles.css')}>📄 styles.css</div>
+                    </div>
                   </div>
                 )}
 
-                <div className="flex items-center cursor-pointer" onClick={() => toggleFolder('components')}>
-                  <span>{isComponentsOpen ? '▼' : '►'}</span>
+                <div className="flex items-center cursor-pointer hover:bg-gray-700 p-1" onClick={() => toggleFolder('components')}>
+                  <span className={`arrow ${isComponentsOpen ? 'open' : ''}`} />
                   <div>📁 components</div>
                 </div>
                 {isComponentsOpen && (
                   <div className="pl-4">
-                    <div>📄 layout.js</div>
-                    <div>📄 editor.js</div>
+                    <div className="cursor-pointer hover:bg-gray-700">
+                      <div className="cursor-pointer hover:bg-gray-700 p-1" onClick={() => alert('Clicked layout.js')}>📄 layout.js</div>
+                    </div>
+                    <div className="cursor-pointer hover:bg-gray-700">
+                      <div className="cursor-pointer hover:bg-gray-700 p-1" onClick={() => alert('Clicked editor.js')}>📄 editor.js</div>
+                    </div>
                   </div>
                 )}
 
-                <div className="flex items-center cursor-pointer" onClick={() => toggleFolder('public')}>
-                  <span>{isPublicOpen ? '▼' : '►'}</span>
+                <div className="flex items-center cursor-pointer hover:bg-gray-700 p-1" onClick={() => toggleFolder('public')}>
+                  <span className={`arrow ${isPublicOpen ? 'open' : ''}`} />
                   <div>📁 public</div>
                 </div>
                 {isPublicOpen && (
                   <div className="pl-4">
-                    <div>📄 favicon.ico</div>
+                    <div className="cursor-pointer hover:bg-gray-700">
+                      <div className="cursor-pointer hover:bg-gray-700 p-1" onClick={() => alert('Clicked favicon.ico')}>📄 favicon.ico</div>
+                    </div>
                   </div>
                 )}
 
-                <div className="flex items-center cursor-pointer" onClick={() => toggleFolder('styles')}>
-                  <span>{isStylesOpen ? '▼' : '►'}</span>
+                <div className="flex items-center cursor-pointer hover:bg-gray-700 p-1" onClick={() => toggleFolder('styles')}>
+                  <span className={`arrow ${isStylesOpen ? 'open' : ''}`} />
                   <div>📁 styles</div>
                 </div>
                 {isStylesOpen && (
                   <div className="pl-4">
-                    <div>📄 globals.css</div>
+                    <div className="cursor-pointer hover:bg-gray-700">
+                      <div className="cursor-pointer hover:bg-gray-700 p-1" onClick={() => alert('Clicked globals.css')}>📄 globals.css</div>
+                    </div>
                   </div>
                 )}
 
-                <div className="flex items-center cursor-pointer" onClick={() => toggleFolder('utils')}>
-                  <span>{isUtilsOpen ? '▼' : '►'}</span>
+                <div className="flex items-center cursor-pointer hover:bg-gray-700 p-1" onClick={() => toggleFolder('utils')}>
+                  <span className={`arrow ${isUtilsOpen ? 'open' : ''}`} />
                   <div>📁 utils</div>
                 </div>
                 {isUtilsOpen && (
                   <div className="pl-4">
-                    <div>📄 helpers.js</div>
+                    <div className="cursor-pointer hover:bg-gray-700">
+                      <div className="cursor-pointer hover:bg-gray-700 p-1" onClick={() => alert('Clicked helpers.js')}>📄 helpers.js</div>
+                    </div>
                   </div>
                 )}
               </div>
@@ -112,7 +128,7 @@ function example() {
           {isTerminalOpen && (
             <div className="h-48 border-t border-gray-700 bg-black p-2">
               <div className="flex items-center text-sm mb-2">
-                <span className="font-small">TERMINAL</span>
+                <span className="font-medium">TERMINAL</span>
               </div>
               <div className="font-mono text-sm">
                 $ Your typing results will appear here
