@@ -1,2 +1,2 @@
-# codetype
-JS code website
+# ScriptSpeed
+Like monkeytype but for code
